@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block body %}
+    {% for user in users %}
+        <div class="item">
+            <div class="user">
+                <div>id: {{ user.id }}</div>
+                <div>name: {{ user.name }}</div>
+                <div>email: {{ user.email }}</div>
+                <div>city: <a href="/city/{{ user.address.city }}">{{ user.address.city }}</a></div>
+            </div>
+            <div class="posts">
+                {% for post in user['posts'] %}
+                    <div class="post">
+                        <div>userId: {{ post.userId}}</div>
+                        <div>title: {{ post.title }}</div>
+                        <div>body: {{ post.body }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

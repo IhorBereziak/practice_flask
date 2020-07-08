@@ -1,0 +1,15 @@
+body {
+    background-color: lightyellow;
+}
+.item {
+    display: flex;
+    border: 1px solid gray;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+}
